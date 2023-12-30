@@ -54,6 +54,8 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace any other lints here
+      - name: Standard Ruby (not the library)
+        run: bin/standardrb --format progress
       # - name: Security audit dependencies
       #   run: bin/bundler-audit --update
       # - name: Security audit application code

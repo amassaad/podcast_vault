@@ -1,7 +1,7 @@
 class PodcastsController < ApplicationController
-  before_action :set_podcast, only: %i[ show edit update destroy ]
-  before_action :admin?, only: %i[ new edit update destroy ]
-  
+  before_action :set_podcast, only: %i[show edit update destroy]
+  before_action :admin?, only: %i[new edit update destroy]
+
   # GET /podcasts or /podcasts.json
   def index
     @podcasts = Podcast.all.reverse_order
@@ -30,7 +30,7 @@ class PodcastsController < ApplicationController
         format.html { redirect_to podcasts_url, notice: "Podcast was successfully created." }
         format.json { render :show, status: :created, location: @podcast }
       else
-        format.html { redirect_to podcasts_url, notice: "Error creating the podcast."}
+        format.html { redirect_to podcasts_url, notice: "Error creating the podcast." }
         format.json { render json: @podcast.errors, status: :unprocessable_entity }
       end
     end
@@ -63,13 +63,14 @@ class PodcastsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_podcast
-      @podcast = Podcast.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def podcast_params
-      params.require(:podcast).permit(:link)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_podcast
+    @podcast = Podcast.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def podcast_params
+    params.require(:podcast).permit(:link)
+  end
 end

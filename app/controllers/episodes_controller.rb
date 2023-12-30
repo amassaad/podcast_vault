@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  before_action :set_episode, only: %i[ show edit update destroy ]
+  before_action :set_episode, only: %i[show edit update destroy]
 
   # GET /episodes or /episodes.json
   def index
@@ -58,13 +58,14 @@ class EpisodesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_episode
-      @episode = Episode.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def episode_params
-      params.require(:episode).permit(:title, :link, :duration, :podcast_id, :description, :size, :published_at)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_episode
+    @episode = Episode.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def episode_params
+    params.require(:episode).permit(:title, :link, :duration, :podcast_id, :description, :size, :published_at)
+  end
 end

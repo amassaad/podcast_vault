@@ -17,7 +17,7 @@ class PodcastsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create podcast" do
     assert_difference("Podcast.count") do
-      post podcasts_url, params: { podcast: { link: "new_link" } }
+      post podcasts_url, params: {podcast: {link: "new_link"}}
     end
 
     assert_redirected_to podcasts_url
@@ -34,7 +34,7 @@ class PodcastsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update podcast" do
-    patch podcast_url(@podcast), params: { podcast: { author: @podcast.author, description: @podcast.description, image: @podcast.image, link: @podcast.link, subtitle: @podcast.subtitle, title: @podcast.title } }
+    patch podcast_url(@podcast), params: {podcast: {author: @podcast.author, description: @podcast.description, image: @podcast.image, link: @podcast.link, subtitle: @podcast.subtitle, title: @podcast.title}}
     assert_redirected_to podcast_url(@podcast)
   end
 
