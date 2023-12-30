@@ -47,6 +47,7 @@ gem "bootsnap", require: false
 gem "nokogiri"
 gem "httparty"
 gem "sidekiq"
+gem "standard", group: [:development, :test]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
