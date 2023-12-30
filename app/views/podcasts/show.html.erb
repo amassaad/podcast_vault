@@ -1,6 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @podcast %>
+<div class="container">
+  <%= render @podcast %>
+</div>
+<div class="container">
+   <% @episodes.each do |episode| %>
+    <%= render episode %>
+  <% end %>
+</div>
 
 <div>
   <%= link_to "Edit this podcast", edit_podcast_path(@podcast) %> |

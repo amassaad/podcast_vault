@@ -1,6 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: MyString
   link: MyString
   description: MyString
@@ -9,8 +10,8 @@ one:
   image: MyString
 
 two:
-  title: MyString
-  link: MyString
+  title: MyString1
+  link: MyString2
   description: MyString
   subtitle: MyString
   author: MyString

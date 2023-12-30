@@ -4,7 +4,7 @@ one:
   title: MyString
   link: MyString
   duration: 1
-  podcast_id: 
+  podcast_id: 1
   description: MyString
   size: 1
   published_at: 2023-12-30 09:40:54
@@ -13,7 +13,7 @@ two:
   title: MyString
   link: MyString
   duration: 1
-  podcast_id: 
+  podcast_id: 1
   description: MyString
   size: 1
   published_at: 2023-12-30 09:40:54

@@ -4,10 +4,11 @@ class CreateEpisodes < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :link
       t.integer :duration
-      t.bigint :podcast_id
       t.string :description
       t.integer :size
+      t.string :guid
       t.datetime :published_at
+      t.references :podcast, null: false, foreign_key: true
 
       t.timestamps
     end

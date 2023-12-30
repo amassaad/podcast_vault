@@ -1,0 +1,22 @@
+<%= form_with(model: podcast, class: "form-inline justify-content-center mt-3") do |form| %>
+  <% if podcast.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(podcast.errors.count, "error") %> prohibited this podcast from being saved:</h2>
+
+      <ul>
+        <% podcast.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field(:link, class: "form-control mb-2 mr-sm-22", placeholder: "Enter a podcast URL here . . .") %>
+  </div>
+
+  <div>
+    <%= form.submit(class: "bt btn-primary mb-2") %>
+  </div>
+<% end %>
+
