@@ -6,10 +6,10 @@ This is a Ruby on Rails app that allows anyone to add an XML feed to a podcast a
 
 ## TODOs:
 
-- Update concept within jobs.
-- A subscription for created Podcasts (how often to check?).
+- Update concept within jobs, if changes happen then capture them.
+- A subscription for created Podcasts (how often to check? Maybe Daily).
 - Lock down extra episode routes.
-- Support logins, think about storage charges.
+- Support logins, think about storage charges aka billing.
 
 ### Technical Details: 
 

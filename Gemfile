@@ -49,6 +49,7 @@ gem "httparty"
 gem "sidekiq"
 gem "standard", group: [:development, :test]
 gem "aws-sdk-s3", require: false
+gem "faker"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

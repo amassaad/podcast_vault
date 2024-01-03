@@ -7,14 +7,14 @@
 <div class="container mt-5">
     <h1>Recently Added Podcasts</h1>
     <div class="row">
-       <div id="podcasts">
+       <div id="podcasts" class="podcast-container">
         <% @podcasts.each do |podcast| %>
-          <!-- Loop the card component for 8-12 times -->
-          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card mt-3">
-              <img src="<%= podcast.image %>" class="card-img-top thumbnail" alt="podcast">
-              <div class="card-body">
-                <h5 class="card-title"><%= podcast.title %></h5>
+          <!-- Loop the card component -->
+          <div class="podcast-item">
+            <div class="">
+              <img src="<%= podcast.image %>" class="card-img-top" alt="podcast">
+              <div class="p-2">
+                <h5 class="p-3"><%= podcast.title %></h5>
                 <a href="<%= podcast_path(podcast) %>" class="btn btn-primary">View Podcast</a>
               </div>
             </div>
