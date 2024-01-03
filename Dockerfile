@@ -2,7 +2,9 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.2.2
-FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-jemalloc-slim as base
+FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-slim as base
+
+LABEL fly_launch_runtime="rails"
 
 # Rails app lives here
 WORKDIR /rails
@@ -68,9 +70,8 @@ RUN groupadd --system --gid 1000 rails && \
     chown -R 1000:1000 db log storage tmp
 USER 1000:1000
 
-# Entrypoint prepares the database.
+# Entrypoint sets up the container.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["./bin/rails", "server"]
