@@ -1,12 +1,4 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Podcast.skip_callback(:create, :after, :process_podcast)
 
 p1 = Podcast.find_or_create_by!(
   title: "The Joe Rogan Experience",
@@ -53,3 +45,28 @@ Episode.find_or_create_by!(
   description: "Dr. Andrew Huberman — A Neurobiologist on Optimizing Sleep, Enhancing Performance, Reducing Anxiety, Increasing Testosterone, and Using the Body to Control the Mind",
   published_at: "2021-05-03 00:00:00"
 )
+
+10.times do
+  p = Podcast.create!(
+    title: Faker::Book.title,
+    link: Faker::Internet.url,
+    description: Faker::Lorem.paragraph,
+    subtitle: Faker::Lorem.sentence,
+    image: Faker::Avatar.image,
+    author: Faker::Name.name
+  )
+
+  5.times do
+    start_date = Faker::Date.backward(days: 365)
+
+    Episode.create!(
+      podcast: p,
+      title: "#{p.title} - Episode #{Faker::Number.unique.between(from: 1, to: 100)}",
+      link: Faker::Internet.url,
+      description: Faker::Lorem.paragraph(sentence_count: 10),
+      published_at: Faker::Time.between(from: start_date, to: Date.today)
+    )
+  end
+end
+
+Podcast.set_callback(:create, :after, :process_podcast)
