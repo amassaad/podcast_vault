@@ -8,6 +8,10 @@ on:
 env:
   RAILS_ENV: test
 
+permissions:
+  contents: read
+  pages: write
+  
 jobs:
   standardrb:
     runs-on: ubuntu-latest
