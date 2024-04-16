@@ -11,28 +11,4 @@ This is a Ruby on Rails app that allows anyone to add an XML feed to a podcast a
 - Lock down extra episode routes.
 - Support logins, think about storage charges aka billing.
 
-### Technical Details: 
-
-* Ruby version: 3.2.2
-
-* System dependencies: none at this point.
-
-* Configuration:
-
-Just run `bundle install` to install any gems.
-
-* Database creation
-
-`bin\rails db:create`
-
-* Database initialization
-
-There is a seed file with some basic episode info to show the layout `bin\rails db:seed`
-
-* How to run the test suite
-
-`rails test`
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+![](/public/podvault.png)
